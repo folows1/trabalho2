@@ -296,23 +296,23 @@ public class Start {
 	public static void ordenar(Time[] tabela, int x) {
 		for (int i = 0; i < x - 1; i++) {
 			for (int j = 0; j < x - 1 - i; j++) {
-				if (tabela[j] != null && tabela[j + 1] != null && tabela[j].pontos >= tabela[j + 1].pontos
+				if (tabela[j] != null && tabela[j].pontos >= tabela[j + 1].pontos
 						&& tabela[j].saldo > tabela[j + 1].saldo) {
 					Time timeAux = tabela[j];
-					tabela[j] = tabela[j+1];
-					tabela[j+1] = timeAux;
+					tabela[j] = tabela[j + 1];
+					tabela[j + 1] = timeAux;
 				}
 			}
 		}
 	}
-	
+
 	public static void imprimirTabela(Time[] tabela, int x) {
 		System.out.println(" ----  CLASSIFICAÇÃO  ---- \n");
 		int j = 1;
-		for(int i = x; i >= 0; i--) {
-			if(tabela[i] != null) {
+		for (int i = x; i >= 0; i--) {
+			if (tabela[i] != null) {
 				Time time = tabela[i];
-				System.out.println(j+"º "+time.nome+" - "+time.pontos+" pontos - saldo: "+time.saldo);
+				System.out.println(j + "º " + time.nome + " - " + time.pontos + " pontos - saldo: " + time.saldo);
 				j++;
 			}
 		}
