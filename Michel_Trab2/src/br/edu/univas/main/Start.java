@@ -296,8 +296,11 @@ public class Start {
 	public static void ordenar(Time[] tabela, int x) {
 		for (int i = 0; i < x - 1; i++) {
 			for (int j = 0; j < x - 1 - i; j++) {
-				if (tabela[j] != null && tabela[j].pontos >= tabela[j + 1].pontos
-						&& tabela[j].saldo > tabela[j + 1].saldo) {
+				if (tabela[j] != null && tabela[j].pontos > tabela[j + 1].pontos) {
+					Time timeAux = tabela[j];
+					tabela[j] = tabela[j + 1];
+					tabela[j + 1] = timeAux;
+				}else if(tabela[j] != null && tabela[j].pontos == tabela[j+1].pontos && tabela[j].saldo > tabela[j + 1].saldo) {
 					Time timeAux = tabela[j];
 					tabela[j] = tabela[j + 1];
 					tabela[j + 1] = timeAux;
